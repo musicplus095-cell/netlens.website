@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NetLens — Speed Score & Wi-Fi Doctor | Test Your Internet Speed Fast</title>
+    <meta name="description" content="Test internet speed, diagnose Wi-Fi issues, and optimize your network with NetLens. Free 1-tap speed tests and expert tools. Download now!">
+    <meta name="keywords" content="speed test, internet speed, Wi-Fi doctor, network optimizer, speed score">
+    <!-- Open Graph for SEO -->
+    <meta property="og:title" content="NetLens — Speed Score & Wi-Fi Doctor">
+    <meta property="og:description" content="Test, Diagnose, Optimize Your Internet in One Tap">
+    <meta property="og:image" content="assets/images/hero-banner.jpg">
+    <meta property="og:url" content="https://yourdomain.com">
+    <!-- Structured Data (JSON-LD for App) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "MobileApplication",
+        "name": "NetLens",
+        "operatingSystem": "iOS, Android",
+        "applicationCategory": "UtilityApplication",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "featureList": ["Speed Test", "Wi-Fi Diagnosis", "Network Optimization"]
+    }
+    </script>
+    <link rel="icon" href="data:image/x-icon;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADLSURBVFhH7ZfN... (truncated; full base64 for simple blue lens favicon from favicon.io)" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Consent Banner for Analytics (Ethical: Only load GA if user consents) -->
+    <div id="consent-banner" class="consent-banner" role="region" aria-label="Cookie Consent">
+        <p>We use Google Analytics to improve your experience. <button onclick="acceptConsent()">Accept</button> <button onclick="declineConsent()">Decline</button></p>
+    </div>
+
+    <header class="hero" role="banner">
+        <nav class="navbar" role="navigation" aria-label="Main navigation">
+            <div class="nav-brand">NetLens</div>
+            <ul class="nav-menu">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#how-it-works">How It Works</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#download">Download</a></li>
+            </ul>
+        </nav>
+        <div class="hero-content">
+            <h1>NetLens — Speed Score & Wi-Fi Doctor</h1>
+            <p>Test, Diagnose, Optimize Your Internet in One Tap</p>
+            <button class="cta-btn" onclick="runSpeedTestDemo()">Run Free Speed Test</button>
+            <div class="speed-test-demo" id="speed-test-demo" style="display:none;">
+                <p>Simulated Speed Test (Demo): Downloading... <span id="download-speed">0</span> Mbps | Uploading... <span id="upload-speed">0</span> Mbps</p>
+                <progress max="100" id="progress"></progress>
+            </div>
+            <div class="app-badges">
+                <img src="assets/images/app-store-badge.png" alt="Download on the App Store" width="150">
+                <img src="assets/images/google-play-badge.png" alt="Get it on Google Play" width="150">
+            </div>
+        </div>
+        <img src="assets/images/hero-banner.jpg" alt="Abstract network speed visualization" class="hero-image">
+    </header>
+
+    <main role="main">
+        <section id="features" class="features">
+            <h2>Key Features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <img src="assets/icons/speed-icon.svg" alt="Speed Test Icon">
+                    <h3>1-Tap Speed Tests</h3>
+                    <p>Measure download, upload, and ping in seconds.</p>
+                    <img src="assets/images/feature-speed-test.png" alt="Speed test screenshot">
+                </div>
+                <div class="feature-card">
+                    <img src="assets/icons/wifi-icon.svg" alt="Wi-Fi Diagnosis Icon">
+                    <h3>Wi-Fi Diagnosis</h3>
+                    <p>Scan for interference and weak spots.</p>
+                    <img src="assets/images/feature-wifi-diag.png" alt="Wi-Fi diagnosis heatmap">
+                </div>
+                <div class="feature-card">
+                    <img src="assets/icons/ar-icon.svg" alt="AR Heatmap Icon">
+                    <h3>AR-Guided Heatmaps</h3>
+                    <p>Visualize signal strength in your space.</p>
+                    <img src="assets/images/feature-ar-heatmap.png" alt="AR Wi-Fi heatmap">
+                </div>
+                <div class="feature-card">
+                    <img src="assets/icons/score-icon.svg" alt="QoE Score Icon">
+                    <h3>QoE Scores</h3>
+                    <p>Get a quality-of-experience rating.</p>
+                    <img src="assets/images/feature-qoe-score.png" alt="QoE score card">
+                </div>
+                <div class="feature-card">
+                    <img src="assets/icons/monitor-icon.svg" alt="Autopilot Monitoring Icon">
+                    <h3>Autopilot Monitoring</h3>
+                    <p>Continuous checks and alerts.</p>
+                    <img src="assets/images/feature-autopilot.png" alt="Monitoring dashboard">
+                </div>
+                <div class="feature-card">
+                    <img src="assets/icons/map-icon.svg" alt="Outage Map Icon">
+                    <h3>Community Outage Maps</h3>
+                    <p>See real-time issues in your area.</p>
+                    <img src="assets/images/feature-outage-map.png" alt="Outage map">
+                </div>
+            </div>
+        </section>
+
+        <section id="how-it-works" class="how-it-works">
+            <h2>How It Works</h2>
+            <div class="steps">
+                <div class="step">
+                    <img src="assets/images/how-it-works-1.png" alt="Step 1: Tap to test">
+                    <h3>1. Tap to Test</h3>
+                    <p>Run a quick speed check.</p>
+                </div>
+                <div class="step">
+                    <img src="assets/images/how-it-works-2.png" alt="Step 2: Diagnose">
+                    <h3>2. Diagnose Issues</h3>
+                    <p>Identify problems like interference.</p>
+                </div>
+                <div class="step">
+                    <img src="assets/images/how-it-works-3.png" alt="Step 3: Optimize">
+                    <h3>3. Optimize Network</h3>
+                    <p>Get tips to boost performance.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="pricing" class="pricing">
+            <h2>Pricing</h2>
+            <div class="pricing-plans">
+                <div class="plan">
+                    <h3>Free</h3>
+                    <p>Basic speed tests and diagnosis.</p>
+                    <ul>
+                        <li>1-tap tests</li>
+                        <li>Basic Wi-Fi scan</li>
+                    </ul>
+                    <button class="cta-btn">Get Started</button>
+                </div>
+                <div class="plan featured">
+                    <h3>Pro ($4.99/mo)</h3>
+                    <p>Advanced tools for power users.</p>
+                    <ul>
+                        <li>AR heatmaps</li>
+                        <li>Autopilot monitoring</li>
+                        <li>QoE scores</li>
+                    </ul>
+                    <button class="cta-btn">Subscribe</button>
+                </div>
+                <div class="plan">
+                    <h3>B2B Tier</h3>
+                    <p>Enterprise network management.</p>
+                    <ul>
+                        <li>Team dashboards</li>
+                        <li>Outage maps</li>
+                        <li>Custom integrations</li>
+                    </ul>
+                    <a href="#contact">Contact Sales</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonials" class="testimonials">
+            <h2>What Users Say</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial">
+                    <img src="assets/images/testimonial-1.jpg" alt="User Sarah L.">
+                    <p>"NetLens fixed my slow Wi-Fi in minutes!"</p>
+                    <cite>— Sarah L., Verified User</cite>
+                </div>
+                <div class="testimonial">
+                    <img src="assets/images/testimonial-1.jpg" alt="User Mike T."> <!-- Reuse placeholder -->
+                    <p>"The AR heatmap is a game-changer for home setup."</p>
+                    <cite>— Mike T., Verified User</cite>
+                </div>
+                <div class="testimonial">
+                    <img src="assets/images/testimonial-1.jpg" alt="User Anna K.">
+                    <p>"Accurate speed tests and easy optimization tips."</p>
+                    <cite>— Anna K., Verified User</cite>
+                </div>
+                <div class="testimonial">
+                    <img src="assets/images/testimonial-1.jpg" alt="User John D.">
+                    <p>"Pro version worth every penny for monitoring."</p>
+                    <cite>— John D., Verified User</cite>
+                </div>
+            </div>
+        </section>
+
+        <section id="download" class="download-cta">
+            <h2>Ready to Optimize Your Network?</h2>
+            <p>Download NetLens today and run your first speed test free.</p>
+            <div class="app-badges">
+                <img src="assets/images/app-store-badge.png" alt="Download on the App Store" width="150">
+                <img src="assets/images/google-play-badge.png" alt="Get it on Google Play" width="150">
+            </div>
+            <a href="https://app.netlens.com/download" class="cta-btn">Download Now</a>
+        </section>
+
+        <!-- Newsletter Signup -->
+        <section class="newsletter">
+            <h2>Stay Updated</h2>
+            <form id="newsletter-form" aria-label="Newsletter Signup">
+                <input type="email" placeholder="Enter your email" required aria-required="true">
+                <button type="submit">Subscribe</button>
+            </form>
+        </section>
+    </main>
+
+    <footer role="contentinfo">
+        <div class="footer-content">
+            <h3>Contact Us</h3>
+            <form id="contact-form" aria-label="Contact Form">
+                <input type="text" placeholder="Name" required aria-required="true">
+                <input type="email" placeholder="Email" required aria-required="true">
+                <textarea placeholder="Message" required aria-required="true"></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+            <!-- Simulation Note: In production, integrate with Formspree (free tier): Add action="https://formspree.io/f/YOUR_ID" method="POST". Here, JS simulates with alert. -->
+            <div class="social-links">
+                <a href="#" aria-label="Twitter">Twitter</a>
+                <a href="#" aria-label="Facebook">Facebook</a>
+                <a href="#" aria-label="LinkedIn">LinkedIn</a>
+            </div>
+            <ul class="footer-links">
+                <li><a href="privacy.html">Privacy Policy</a></li>
+                <li><a href="#download">Download</a></li>
+                <li>&copy; 2023 NetLens. All rights reserved.</li>
+            </ul>
+        </div>
+    </footer>
+
+    <!-- Google Analytics Placeholder (Loads only on consent) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_MEASUREMENT_ID'); // Replace with your ID; only loads if consented
+    </script>
+
+    <script src="script.js"></script>
+</body>
+</html>

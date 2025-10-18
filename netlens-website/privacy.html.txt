@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - NetLens</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header style="background:#007BFF;color:#fff;padding:2rem;text-align:center;">
+        <h1>Privacy Policy</h1>
+        <nav><a href="index.html" style="color:#fff;">Back to Home</a></nav>
+    </header>
+    <main style="padding:2rem;max-width:800px;margin:0 auto;">
+        <section>
+            <h2>Effective Date: October 2023</h2>
+            <p>NetLens respects your privacy. We collect minimal data for app functionality (e.g., anonymized speed test results for community maps). No personal data is sold. Forms (contact/newsletter) use secure, consent-based services like Formspree (see their policy). Analytics (GA) requires explicit consent and is anonymized. For full details, contact support@netlens.com.</p>
+            <h3>Data We Collect</h3>
+            <ul>
+                <li>Usage data (e.g., test results, IP for location-based outages – anonymized).</li>
+                <li>Form submissions (name/email for inquiries – stored securely, deleted after 30 days).</li>
+            </ul>
+            <h3>Your Rights</h3>
+            <p>Access, delete, or opt-out via app settings or email. Complies with GDPR/CCPA.</p>
+            <h3>Changes</h3>
+            <p>We may update this policy; check back periodically.</p>
+        </section>
+    </main>
+    <footer style="background:#333;color:#fff;padding:1rem;text-align:center;">
+        &copy; 2023 NetLens. <a href="index.html" style="color:#fff;">Home</a>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
